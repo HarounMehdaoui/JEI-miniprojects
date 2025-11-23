@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    padding: 8px 14px;
+    background-color: #0b0b1a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset;
+}
+
+.search-bar{
+    display: flex;
+    align-items: center;
+    background-color: #2f2f40;
+    padding: 6px 10px;
+    max-width: 420px;
+    min-width: 180px;
+}
+
+.search-bar .search[type="text"],
+.search-bar input.search{
+    background: transparent;
+    border: none;
+    color: #e6e6e6;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 6px 8px;
+    outline: none;
+    width: 260px;
+}
+
+.search-bar input::placeholder{
+    color: #bdbdcf;
+}
+
+.search-bar button.search{
+    background: transparent;
+    border: none;
+    padding: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.search-bar img.icon{
+    width: 14px;
+    height: 14px;
+    display: block;
+    filter: brightness(0) invert(1);
+}
+
+/* Center logo */
+.navbar > a img{
+    display: block;
+    height: 24px;
+}
+
+/* Right-side controls */
+.navbar > div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbarbtn{
+    background: transparent;
+    color: #e6e6e6;
+    border: none;
+    padding: 6px 10px;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    cursor: pointer;
+}
+
+/* language and menu have subtle outline */
+.navbar > div .navbarbtn:nth-child(1),
+.navbar > div .navbarbtn:nth-child(2){
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Sign in (last item) styled as orange button */
+.navbar > div .navbarbtn:last-child{
+    background: #ffb238;
+    color: #0b0b0b;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Make images inside main content scale nicely */
+img{max-width:100%;}
