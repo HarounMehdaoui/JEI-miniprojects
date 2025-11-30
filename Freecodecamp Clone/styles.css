@@ -1,97 +1,535 @@
-body {
+/* Reset and Base Styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-.navbar{
-    padding: 8px 14px;
-    background-color: #0b0b1a;
+
+body {
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #1b1b32;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Header */
+.header {
+    background-color: #1b1b32;
+    padding: 0.75rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
-    box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset;
+    gap: 1.5rem;
 }
 
-.search-bar{
+.search-bar {
     display: flex;
     align-items: center;
-    background-color: #2f2f40;
-    padding: 6px 10px;
-    max-width: 420px;
-    min-width: 180px;
+    background-color: #2a2a40;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    flex: 1;
+    max-width: 400px;
 }
 
-.search-bar .search[type="text"],
-.search-bar input.search{
+.search-icon {
+    color: #858591;
+    margin-right: 0.5rem;
+}
+
+.search-bar input {
     background: transparent;
     border: none;
-    color: #e6e6e6;
-    font-size: 13px;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 6px 8px;
+    color: #fff;
     outline: none;
-    width: 260px;
+    width: 100%;
+    font-size: 0.875rem;
 }
 
-.search-bar input::placeholder{
-    color: #bdbdcf;
+.search-bar input::placeholder {
+    color: #858591;
 }
 
-.search-bar button.search{
-    background: transparent;
-    border: none;
-    padding: 4px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.search-bar img.icon{
-    width: 14px;
-    height: 14px;
-    display: block;
-    filter: brightness(0) invert(1);
-}
-
-/* Center logo */
-.navbar > a img{
-    display: block;
-    height: 24px;
-}
-
-/* Right-side controls */
-.navbar > div{
+.logo {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #fff;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.5rem;
 }
 
-.navbarbtn{
+.header-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.menu-btn {
     background: transparent;
-    color: #e6e6e6;
-    border: none;
-    padding: 6px 10px;
-    font-size: 13px;
-    font-family: Arial, Helvetica, sans-serif;
-
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-family: inherit;
 }
 
-/* language and menu have subtle outline */
-.navbar > div .navbarbtn:nth-child(1),
-.navbar > div .navbarbtn:nth-child(2){
-    border: 1px solid rgba(255,255,255,0.08);
+.sign-in-btn {
+    background-color: #f5b641;
+    border: none;
+    color: #1b1b32;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: inherit;
 }
 
-/* Sign in (last item) styled as orange button */
-.navbar > div .navbarbtn:last-child{
-    background: #ffb238;
-    color: #0b0b0b;
-    font-weight: 600;
-    font-family: Arial, Helvetica, sans-serif;
-    border: 1px solid rgba(0,0,0,0.08);
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #ffd6e8 0%, #e0d4f7 50%, #c8e5f4 100%);
+    padding: 6rem 0;
+    text-align: center;
 }
 
-/* Make images inside main content scale nicely */
-img{max-width:100%;}
+.hero h1 {
+    color: #1b1b32;
+    max-width: 900px;
+    margin: 0 auto 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #1b1b32;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+}
+
+.cta-button {
+    background-color: #f5b641;
+    border: none;
+    color: #1b1b32;
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.125rem;
+    font-family: inherit;
+    transition: transform 0.2s;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Companies Section */
+.companies {
+    background-color: #fff;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.companies-text {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    color: #1b1b32;
+}
+
+.company-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.company-logos img {
+    height: 40px;
+    opacity: 0.8;
+}
+
+/* Features Section */
+.features {
+    background-color: #3b3b4f;
+    padding: 5rem 0;
+    color: #fff;
+}
+
+.features h2 {
+    color: #fff;
+    margin-bottom: 3rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.feature-card {
+    text-align: left;
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+    filter: brightness(0) invert(1) saturate(100%);
+}
+
+.feature-card h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+    color: #d0d0d5;
+    line-height: 1.8;
+}
+
+.features .cta-button {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: #fff;
+    padding: 5rem 0;
+}
+
+.testimonials h2 {
+    color: #1b1b32;
+    margin-bottom: 3rem;
+}
+
+.testimonial-card {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    background-color: #f5f6f7;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.testimonial-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 4px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.testimonial-placeholder {
+    background-color: #d0d0d5;
+}
+
+.testimonial-content h3 {
+    font-size: 1.25rem;
+    color: #1b1b32;
+    margin-bottom: 0.5rem;
+}
+
+.job-title {
+    font-size: 1.125rem;
+    color: #1b1b32;
+    margin-bottom: 1rem;
+}
+
+.testimonial-content blockquote {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #1b1b32;
+    text-align: justify;
+}
+
+.testimonials .cta-button {
+    display: block;
+    margin: 3rem auto 0;
+}
+
+/* Curriculum Section */
+.curriculum {
+    background-color: #f5f6f7;
+    padding: 5rem 0;
+}
+
+.curriculum h2 {
+    color: #1b1b32;
+}
+
+.curriculum-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    color: #1b1b32;
+}
+
+.certification-list {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.cert-card {
+    background-color: #fff;
+    border: 2px solid #1b1b32;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.cert-card:hover {
+    transform: translateX(5px);
+}
+
+.cert-icon {
+    flex-shrink: 0;
+}
+
+.cert-card span {
+    flex: 1;
+    font-size: 1.125rem;
+    color: #1b1b32;
+    font-weight: 400;
+}
+
+.arrow-icon {
+    flex-shrink: 0;
+    stroke: #1b1b32;
+    stroke-width: 2;
+}
+
+.challenge-card {
+    margin-bottom: 2rem;
+}
+
+.curriculum .cta-button {
+    display: block;
+    margin: 0 auto;
+}
+
+/* FAQ Section */
+.faq {
+    background-color: #fff;
+    padding: 5rem 0;
+}
+
+.faq h2 {
+    color: #1b1b32;
+    margin-bottom: 3rem;
+}
+
+.faq-item {
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+}
+
+.faq-item h3 {
+    color: #1b1b32;
+    font-size: 1.375rem;
+    margin-bottom: 0.75rem;
+}
+
+.faq-item p {
+    color: #1b1b32;
+    line-height: 1.8;
+}
+
+.faq .cta-button {
+    display: block;
+    margin: 3rem auto 0;
+}
+
+/* Footer */
+.footer {
+    background-color: #e8e8ea;
+    padding: 3rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-about p {
+    color: #1b1b32;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.footer-column h4 {
+    color: #1b1b32;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-column a {
+    display: block;
+    color: #1b1b32;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+.footer-nav {
+    border-top: 1px solid #ccc;
+    padding-top: 2rem;
+}
+
+.footer-nav h4 {
+    color: #1b1b32;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.footer-nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-nav-links a {
+    color: #1b1b32;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+.footer-nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .header-content {
+        flex-wrap: wrap;
+    }
+
+    .search-bar {
+        order: 3;
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .hero {
+        padding: 3rem 0;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .testimonial-card {
+        flex-direction: column;
+    }
+
+    .testimonial-photo {
+        width: 100%;
+        height: 250px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .company-logos {
+        gap: 1.5rem;
+    }
+
+    .company-logos img {
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-actions {
+        flex-wrap: wrap;
+    }
+
+    .menu-btn {
+        font-size: 0.875rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .sign-in-btn {
+        font-size: 0.875rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .cta-button {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+    }
+}
